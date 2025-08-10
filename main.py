@@ -24,6 +24,9 @@ def main():
         #Draw our screen
         screen.fill("black")
         
+        #Update our player
+        p1.update(dt)
+        
         #Draw our player
         p1.draw(screen)
 
