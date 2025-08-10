@@ -35,6 +35,7 @@ def main():
     afield = AsteroidField()
 
     
+    ##==GAME LOOP==##
 
     while True:
         #Checking events
@@ -53,6 +54,13 @@ def main():
             if asteroid.check_collisions(p1):
                 print("Game over!")
                 return
+            
+            for bullet in shots:
+                if asteroid.check_collisions(bullet):
+                    bullet.kill()
+                    asteroid.split()
+        
+
             
         #drawing all drawables
         for object in drawable:
