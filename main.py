@@ -39,8 +39,15 @@ def main():
         #Draw our screen
         screen.fill("black")
         
-        #Using the groups to update the player
+        #Updating all updatables
         updatable.update(dt)
+
+        for asteroid in asteroids:
+            if asteroid.check_collisions(p1):
+                print("Game over!")
+                return
+            
+        #drawing all drawables
         for object in drawable:
             object.draw(screen)
 
